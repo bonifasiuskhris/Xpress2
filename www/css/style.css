@@ -10,13 +10,13 @@ h1, h2, h3, h4, h5{
 
 .customItem{
 	color: #777;
-	background-color:none;
+	background-color: none;
 	background: none;
 }
 
 @font-face {
     font-family: GlobFont;
-    src: url(../fonts/segoeuil.ttf);
+    src: url(../fonts/ProximaNova.otf);
 }
 
 /*----------------------
@@ -25,7 +25,6 @@ style for user business
 
 .biz {
 	background-color: white;
-	
 }
 
 
@@ -75,4 +74,25 @@ a{
 .starRating:not(old) > label:hover ~ label:before,
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
+}
+
+.bg-grey {
+    background-color: #f3f3f3;
+    min-height: 500px;
+}
+
+.bg-menu {
+    background-color: #79d0a3;    
+}
+
+.center {
+    text-align: center;
+}
+
+.light-font{
+    color: #777;
+}
+
+.button-login {
+    background-color: #dddddd;
 }

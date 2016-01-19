@@ -30,13 +30,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-//gema custom state
+//MyState
+
+  .state('login', {
+      url: '/login',
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'
+  })
 
 .state('app.home',{
   url:"/home",
   views: {
     'menuContent': {
-      templateUrl: "templates/home.html"
+      templateUrl: "templates/Home/home.html"
     }
   }
 })
@@ -50,14 +56,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   }
 })
 
-.state('app.samplecategory',{
-  url:"/samplecategory",
+.state('app.myproject',{
+  url:"/myproject",
   views: {
-    'menuContent': {
-      templateUrl: "templates/sample-category.html"
+      'menuContent': {
+      templateUrl: "templates/Project/myproject.html",
+      controller: 'ProjectCtrl'
     }
   }
 })
+
+.state('app.createproject',{
+  url:"/createproject",
+  views: {
+      'menuContent': {
+      templateUrl: "templates/Project/createproject.html",
+      controller: 'ProjectCtrl'
+    }
+  }
+})
+// .state('app.samplecategory',{
+//   url:"/samplecategory",
+//   views: {
+//     'menuContent': {
+//       templateUrl: "templates/sample-category.html"
+//     }
+//   }
+// })
 
 .state('app.account', {
   url:"/account",
@@ -88,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
  //    }
  // })
 
-//end gema custom state
+//end MyState
 
   .state('app.search', {
     url: "/search",
@@ -127,5 +152,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('app/home');
+  $urlRouterProvider.otherwise('/app/home');
 });

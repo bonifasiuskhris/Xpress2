@@ -33,26 +33,50 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('ProjectCtrl', function($scope) {
+  $scope.projects = [
+    { title: 'FIX MY HOME', id: 1 },
+    { title: 'FIX MY HOME', id: 2 },
+    { title: 'FIX MY HOME', id: 3 },
+    { title: 'FIX MY HOME', id: 4 },
+    { title: 'FIX MY HOME', id: 5 },
+    { title: 'FIX MY HOME', id: 6 }
   ];
+
+  $scope.createproject = function(task) {
+    $scope.projects.push({
+      title: project.title
+    });
+    project.title = "";
+  };
+})
+
+.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+    $scope.data = {};
+ 
+    $scope.Devlogin = function() {
+        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+            $state.go('app.home');
+        }).error(function(data) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login failed!',
+                template: 'Please check your credentials!'
+            });
+        });
+    }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-//gema controller
+//MY controller
 
 .controller('AccountCtrl', function($scope){
   $scope.AccMenu = [
-    {name: 'My Profile', id:1},
+    {name: 'Profile', id:1},
+    {name: 'Change Password', id:2},
     {name: 'My Wallet', id:3},
+    {name: 'Project History', id:4},
   ];
 })
 

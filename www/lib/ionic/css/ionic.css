@@ -4787,11 +4787,8 @@ a.item {
   z-index: 2;
   padding: 16px 49px 16px 16px;
   border: none;
-  background-color: none; }
-  /*gema was here*/
-  /*---edit log---
-  *background-color:white->background-color:nonde 
-  ----*/
+  background-color: white; }
+
 a.item-content {
   display: block;
   color: inherit;
